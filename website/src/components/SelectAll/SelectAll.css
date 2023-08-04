@@ -1,0 +1,12 @@
+.box {
+    margin-bottom: 5%;
+}
+
+
+.wrap {
+    display: inline-block;
+}
+
+.requiredText {
+    color: red;
+}

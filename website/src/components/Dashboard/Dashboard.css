@@ -1,0 +1,21 @@
+table {
+    width: 100%;
+    text-align: center;
+    border:1px solid black;
+    margin-bottom: 3%;
+}
+
+.containerBox {
+    float: left;
+    margin-right: 5%;
+}
+
+.activityWrap {
+    float:none;
+    margin-bottom: 5%;
+}
+
+.roleWrap {
+    float:none;
+    margin-bottom: 5%;
+}

@@ -1,0 +1,952 @@
+[
+  {
+    "id": "_pb_users_auth_",
+    "name": "users",
+    "type": "auth",
+    "system": false,
+    "schema": [
+      {
+        "id": "users_name",
+        "name": "displayName",
+        "type": "text",
+        "system": false,
+        "required": true,
+        "unique": false,
+        "options": {
+          "min": null,
+          "max": null,
+          "pattern": ""
+        }
+      },
+      {
+        "id": "pkzbihiz",
+        "name": "experienceLevel",
+        "type": "number",
+        "system": false,
+        "required": false,
+        "unique": false,
+        "options": {
+          "min": 0,
+          "max": null
+        }
+      }
+    ],
+    "listRule": "",
+    "viewRule": "",
+    "createRule": "",
+    "updateRule": "",
+    "deleteRule": "",
+    "options": {
+      "allowEmailAuth": true,
+      "allowOAuth2Auth": false,
+      "allowUsernameAuth": false,
+      "exceptEmailDomains": null,
+      "manageRule": null,
+      "minPasswordLength": 8,
+      "onlyEmailDomains": [
+        "csusm.edu",
+        "cougars.csusm.edu"
+      ],
+      "requireEmail": true
+    }
+  },
+  {
+    "id": "xo9nwozehu25039",
+    "name": "role_types",
+    "type": "base",
+    "system": false,
+    "schema": [
+      {
+        "id": "iedyeir4",
+        "name": "name",
+        "type": "text",
+        "system": false,
+        "required": true,
+        "unique": true,
+        "options": {
+          "min": null,
+          "max": null,
+          "pattern": ""
+        }
+      }
+    ],
+    "listRule": "",
+    "viewRule": "",
+    "createRule": null,
+    "updateRule": null,
+    "deleteRule": null,
+    "options": {}
+  },
+  {
+    "id": "vw84jrfgoh0rr3u",
+    "name": "role_suggestions",
+    "type": "base",
+    "system": false,
+    "schema": [
+      {
+        "id": "2gwifewd",
+        "name": "participantId",
+        "type": "relation",
+        "system": false,
+        "required": true,
+        "unique": false,
+        "options": {
+          "collectionId": "elp7806hz4lkc39",
+          "cascadeDelete": false,
+          "minSelect": null,
+          "maxSelect": 1,
+          "displayFields": [
+            "userId",
+            "sessionId"
+          ]
+        }
+      },
+      {
+        "id": "a1hxsnlk",
+        "name": "roleTypeId",
+        "type": "relation",
+        "system": false,
+        "required": true,
+        "unique": false,
+        "options": {
+          "collectionId": "xo9nwozehu25039",
+          "cascadeDelete": false,
+          "minSelect": null,
+          "maxSelect": 1,
+          "displayFields": [
+            "name"
+          ]
+        }
+      },
+      {
+        "id": "nbf0xvr8",
+        "name": "followed",
+        "type": "bool",
+        "system": false,
+        "required": false,
+        "unique": false,
+        "options": {}
+      }
+    ],
+    "listRule": "",
+    "viewRule": "",
+    "createRule": "",
+    "updateRule": "",
+    "deleteRule": null,
+    "options": {}
+  },
+  {
+    "id": "xdzkw6gbwb8lg3k",
+    "name": "surveys",
+    "type": "base",
+    "system": false,
+    "schema": [
+      {
+        "id": "5ebhuz0s",
+        "name": "name",
+        "type": "text",
+        "system": false,
+        "required": true,
+        "unique": true,
+        "options": {
+          "min": null,
+          "max": null,
+          "pattern": ""
+        }
+      }
+    ],
+    "listRule": "",
+    "viewRule": "",
+    "createRule": null,
+    "updateRule": null,
+    "deleteRule": null,
+    "options": {}
+  },
+  {
+    "id": "1ng90v086748pwm",
+    "name": "sessions",
+    "type": "base",
+    "system": false,
+    "schema": [
+      {
+        "id": "netximy8",
+        "name": "code",
+        "type": "text",
+        "system": false,
+        "required": true,
+        "unique": true,
+        "options": {
+          "min": 6,
+          "max": 6,
+          "pattern": ""
+        }
+      },
+      {
+        "id": "zsuplmeo",
+        "name": "hostDevice",
+        "type": "text",
+        "system": false,
+        "required": true,
+        "unique": false,
+        "options": {
+          "min": null,
+          "max": null,
+          "pattern": ""
+        }
+      },
+      {
+        "id": "xigbuy16",
+        "name": "locked",
+        "type": "date",
+        "system": false,
+        "required": false,
+        "unique": false,
+        "options": {
+          "min": "",
+          "max": ""
+        }
+      },
+      {
+        "id": "t5jwod6s",
+        "name": "started",
+        "type": "date",
+        "system": false,
+        "required": false,
+        "unique": false,
+        "options": {
+          "min": "",
+          "max": ""
+        }
+      },
+      {
+        "id": "bwkxaajy",
+        "name": "ended",
+        "type": "date",
+        "system": false,
+        "required": false,
+        "unique": false,
+        "options": {
+          "min": "",
+          "max": ""
+        }
+      },
+      {
+        "id": "rjvpells",
+        "name": "surveyId",
+        "type": "relation",
+        "system": false,
+        "required": true,
+        "unique": false,
+        "options": {
+          "collectionId": "xdzkw6gbwb8lg3k",
+          "cascadeDelete": false,
+          "minSelect": null,
+          "maxSelect": 1,
+          "displayFields": [
+            "name"
+          ]
+        }
+      }
+    ],
+    "listRule": "",
+    "viewRule": "",
+    "createRule": "",
+    "updateRule": "",
+    "deleteRule": null,
+    "options": {}
+  },
+  {
+    "id": "u668x0yll1dd1og",
+    "name": "setting_types",
+    "type": "base",
+    "system": false,
+    "schema": [
+      {
+        "id": "7x1n2kbb",
+        "name": "name",
+        "type": "text",
+        "system": false,
+        "required": true,
+        "unique": true,
+        "options": {
+          "min": null,
+          "max": null,
+          "pattern": ""
+        }
+      },
+      {
+        "id": "xnuftcpp",
+        "name": "defaultValue",
+        "type": "json",
+        "system": false,
+        "required": true,
+        "unique": false,
+        "options": {}
+      }
+    ],
+    "listRule": "",
+    "viewRule": "",
+    "createRule": null,
+    "updateRule": null,
+    "deleteRule": null,
+    "options": {}
+  },
+  {
+    "id": "40233s588ihqc1z",
+    "name": "setting_suggestions",
+    "type": "base",
+    "system": false,
+    "schema": [
+      {
+        "id": "px9mtowf",
+        "name": "sessionId",
+        "type": "relation",
+        "system": false,
+        "required": true,
+        "unique": false,
+        "options": {
+          "collectionId": "1ng90v086748pwm",
+          "cascadeDelete": false,
+          "minSelect": null,
+          "maxSelect": 1,
+          "displayFields": [
+            "code"
+          ]
+        }
+      },
+      {
+        "id": "swcyu6oj",
+        "name": "settingTypeId",
+        "type": "relation",
+        "system": false,
+        "required": true,
+        "unique": false,
+        "options": {
+          "collectionId": "u668x0yll1dd1og",
+          "cascadeDelete": false,
+          "minSelect": null,
+          "maxSelect": 1,
+          "displayFields": [
+            "name"
+          ]
+        }
+      },
+      {
+        "id": "lcyuzulh",
+        "name": "value",
+        "type": "json",
+        "system": false,
+        "required": true,
+        "unique": false,
+        "options": {}
+      },
+      {
+        "id": "hvrzef5o",
+        "name": "followed",
+        "type": "bool",
+        "system": false,
+        "required": false,
+        "unique": false,
+        "options": {}
+      }
+    ],
+    "listRule": "",
+    "viewRule": "",
+    "createRule": "",
+    "updateRule": "",
+    "deleteRule": null,
+    "options": {}
+  },
+  {
+    "id": "j2rcx7t5oayg6i8",
+    "name": "questions",
+    "type": "base",
+    "system": false,
+    "schema": [
+      {
+        "id": "l5ornvuw",
+        "name": "name",
+        "type": "text",
+        "system": false,
+        "required": true,
+        "unique": true,
+        "options": {
+          "min": null,
+          "max": null,
+          "pattern": ""
+        }
+      },
+      {
+        "id": "sleojj6v",
+        "name": "text",
+        "type": "text",
+        "system": false,
+        "required": true,
+        "unique": false,
+        "options": {
+          "min": null,
+          "max": null,
+          "pattern": ""
+        }
+      },
+      {
+        "id": "8rikw8pu",
+        "name": "choices",
+        "type": "json",
+        "system": false,
+        "required": false,
+        "unique": false,
+        "options": {}
+      },
+      {
+        "id": "1egldgq1",
+        "name": "required",
+        "type": "bool",
+        "system": false,
+        "required": false,
+        "unique": false,
+        "options": {}
+      },
+      {
+        "id": "qkbrp8lv",
+        "name": "questionTypeId",
+        "type": "relation",
+        "system": false,
+        "required": true,
+        "unique": false,
+        "options": {
+          "collectionId": "lqi40z80i7mlgej",
+          "cascadeDelete": false,
+          "minSelect": null,
+          "maxSelect": 1,
+          "displayFields": [
+            "name"
+          ]
+        }
+      }
+    ],
+    "listRule": "",
+    "viewRule": "",
+    "createRule": null,
+    "updateRule": null,
+    "deleteRule": null,
+    "options": {}
+  },
+  {
+    "id": "lb0nnmla68nddy6",
+    "name": "session_settings",
+    "type": "base",
+    "system": false,
+    "schema": [
+      {
+        "id": "gsvdzd19",
+        "name": "sessionId",
+        "type": "relation",
+        "system": false,
+        "required": true,
+        "unique": false,
+        "options": {
+          "collectionId": "1ng90v086748pwm",
+          "cascadeDelete": false,
+          "minSelect": null,
+          "maxSelect": 1,
+          "displayFields": [
+            "code"
+          ]
+        }
+      },
+      {
+        "id": "4ptn0rnf",
+        "name": "settingTypeId",
+        "type": "relation",
+        "system": false,
+        "required": true,
+        "unique": false,
+        "options": {
+          "collectionId": "u668x0yll1dd1og",
+          "cascadeDelete": false,
+          "minSelect": null,
+          "maxSelect": 1,
+          "displayFields": [
+            "name"
+          ]
+        }
+      },
+      {
+        "id": "jqao7zrl",
+        "name": "value",
+        "type": "json",
+        "system": false,
+        "required": true,
+        "unique": false,
+        "options": {}
+      }
+    ],
+    "listRule": "",
+    "viewRule": "",
+    "createRule": "",
+    "updateRule": "",
+    "deleteRule": null,
+    "options": {}
+  },
+  {
+    "id": "2lqzhqvlpwvuj1n",
+    "name": "survey_questions",
+    "type": "base",
+    "system": false,
+    "schema": [
+      {
+        "id": "9z1zvvtf",
+        "name": "surveyId",
+        "type": "relation",
+        "system": false,
+        "required": true,
+        "unique": false,
+        "options": {
+          "collectionId": "xdzkw6gbwb8lg3k",
+          "cascadeDelete": false,
+          "minSelect": null,
+          "maxSelect": 1,
+          "displayFields": [
+            "name"
+          ]
+        }
+      },
+      {
+        "id": "rzjzmtvo",
+        "name": "questionId",
+        "type": "relation",
+        "system": false,
+        "required": true,
+        "unique": false,
+        "options": {
+          "collectionId": "j2rcx7t5oayg6i8",
+          "cascadeDelete": false,
+          "minSelect": null,
+          "maxSelect": 1,
+          "displayFields": [
+            "name",
+            "text"
+          ]
+        }
+      }
+    ],
+    "listRule": "",
+    "viewRule": "",
+    "createRule": null,
+    "updateRule": null,
+    "deleteRule": null,
+    "options": {}
+  },
+  {
+    "id": "elp7806hz4lkc39",
+    "name": "participants",
+    "type": "base",
+    "system": false,
+    "schema": [
+      {
+        "id": "8otmaqs1",
+        "name": "userId",
+        "type": "relation",
+        "system": false,
+        "required": true,
+        "unique": false,
+        "options": {
+          "collectionId": "_pb_users_auth_",
+          "cascadeDelete": false,
+          "minSelect": null,
+          "maxSelect": 1,
+          "displayFields": [
+            "email",
+            "displayName"
+          ]
+        }
+      },
+      {
+        "id": "56peub7w",
+        "name": "sessionId",
+        "type": "relation",
+        "system": false,
+        "required": true,
+        "unique": false,
+        "options": {
+          "collectionId": "1ng90v086748pwm",
+          "cascadeDelete": false,
+          "minSelect": null,
+          "maxSelect": 1,
+          "displayFields": [
+            "code"
+          ]
+        }
+      },
+      {
+        "id": "znwrkjzb",
+        "name": "rating",
+        "type": "number",
+        "system": false,
+        "required": false,
+        "unique": false,
+        "options": {
+          "min": 0,
+          "max": 1
+        }
+      }
+    ],
+    "listRule": "",
+    "viewRule": "",
+    "createRule": "",
+    "updateRule": "",
+    "deleteRule": "",
+    "options": {}
+  },
+  {
+    "id": "0fkfhjjp5yjuwxq",
+    "name": "survey_responses",
+    "type": "base",
+    "system": false,
+    "schema": [
+      {
+        "id": "t4dkjldf",
+        "name": "participantId",
+        "type": "relation",
+        "system": false,
+        "required": true,
+        "unique": false,
+        "options": {
+          "collectionId": "elp7806hz4lkc39",
+          "cascadeDelete": false,
+          "minSelect": null,
+          "maxSelect": 1,
+          "displayFields": [
+            "userId",
+            "sessionId"
+          ]
+        }
+      },
+      {
+        "id": "rxnrz94o",
+        "name": "surveyId",
+        "type": "relation",
+        "system": false,
+        "required": true,
+        "unique": false,
+        "options": {
+          "collectionId": "xdzkw6gbwb8lg3k",
+          "cascadeDelete": false,
+          "minSelect": null,
+          "maxSelect": 1,
+          "displayFields": [
+            "name"
+          ]
+        }
+      },
+      {
+        "id": "0nb2xyfc",
+        "name": "completed",
+        "type": "bool",
+        "system": false,
+        "required": false,
+        "unique": false,
+        "options": {}
+      }
+    ],
+    "listRule": "",
+    "viewRule": "",
+    "createRule": "",
+    "updateRule": "",
+    "deleteRule": null,
+    "options": {}
+  },
+  {
+    "id": "utq1f9zbngqe0cn",
+    "name": "question_answers",
+    "type": "base",
+    "system": false,
+    "schema": [
+      {
+        "id": "jfyd84cq",
+        "name": "surveyResponseId",
+        "type": "relation",
+        "system": false,
+        "required": true,
+        "unique": false,
+        "options": {
+          "collectionId": "0fkfhjjp5yjuwxq",
+          "cascadeDelete": false,
+          "minSelect": null,
+          "maxSelect": 1,
+          "displayFields": [
+            "participantId",
+            "surveyId"
+          ]
+        }
+      },
+      {
+        "id": "hnygh2ax",
+        "name": "questionId",
+        "type": "relation",
+        "system": false,
+        "required": true,
+        "unique": false,
+        "options": {
+          "collectionId": "j2rcx7t5oayg6i8",
+          "cascadeDelete": false,
+          "minSelect": null,
+          "maxSelect": 1,
+          "displayFields": [
+            "name",
+            "text"
+          ]
+        }
+      },
+      {
+        "id": "dtdalqtt",
+        "name": "answer",
+        "type": "json",
+        "system": false,
+        "required": true,
+        "unique": false,
+        "options": {}
+      }
+    ],
+    "listRule": "",
+    "viewRule": "",
+    "createRule": "",
+    "updateRule": null,
+    "deleteRule": null,
+    "options": {}
+  },
+  {
+    "id": "cha2zssmu4axdxe",
+    "name": "participant_tips",
+    "type": "base",
+    "system": false,
+    "schema": [
+      {
+        "id": "8qbfwog7",
+        "name": "participantId",
+        "type": "relation",
+        "system": false,
+        "required": true,
+        "unique": false,
+        "options": {
+          "collectionId": "elp7806hz4lkc39",
+          "cascadeDelete": false,
+          "minSelect": null,
+          "maxSelect": 1,
+          "displayFields": [
+            "userId",
+            "sessionId"
+          ]
+        }
+      },
+      {
+        "id": "jnw3c9eu",
+        "name": "text",
+        "type": "text",
+        "system": false,
+        "required": true,
+        "unique": false,
+        "options": {
+          "min": null,
+          "max": null,
+          "pattern": ""
+        }
+      }
+    ],
+    "listRule": "",
+    "viewRule": "",
+    "createRule": "",
+    "updateRule": null,
+    "deleteRule": null,
+    "options": {}
+  },
+  {
+    "id": "ekx2u8f3uod58jz",
+    "name": "activity_logs",
+    "type": "base",
+    "system": false,
+    "schema": [
+      {
+        "id": "0wbajvlz",
+        "name": "participantRoleId",
+        "type": "relation",
+        "system": false,
+        "required": true,
+        "unique": false,
+        "options": {
+          "collectionId": "albqijhkmtthw39",
+          "cascadeDelete": false,
+          "minSelect": null,
+          "maxSelect": 1,
+          "displayFields": [
+            "participantId",
+            "roleTypeId"
+          ]
+        }
+      },
+      {
+        "id": "fvce4cvp",
+        "name": "spokeCount",
+        "type": "number",
+        "system": false,
+        "required": false,
+        "unique": false,
+        "options": {
+          "min": 0,
+          "max": null
+        }
+      },
+      {
+        "id": "0py3dqlh",
+        "name": "frustratedCount",
+        "type": "number",
+        "system": false,
+        "required": false,
+        "unique": false,
+        "options": {
+          "min": 0,
+          "max": null
+        }
+      },
+      {
+        "id": "bxupu7fx",
+        "name": "boredCount",
+        "type": "number",
+        "system": false,
+        "required": false,
+        "unique": false,
+        "options": {
+          "min": 0,
+          "max": null
+        }
+      }
+    ],
+    "listRule": "",
+    "viewRule": "",
+    "createRule": "",
+    "updateRule": "",
+    "deleteRule": "",
+    "options": {}
+  },
+  {
+    "id": "lqi40z80i7mlgej",
+    "name": "question_types",
+    "type": "base",
+    "system": false,
+    "schema": [
+      {
+        "id": "mnhbvusc",
+        "name": "name",
+        "type": "text",
+        "system": false,
+        "required": true,
+        "unique": true,
+        "options": {
+          "min": null,
+          "max": null,
+          "pattern": ""
+        }
+      }
+    ],
+    "listRule": "",
+    "viewRule": "",
+    "createRule": null,
+    "updateRule": null,
+    "deleteRule": null,
+    "options": {}
+  },
+  {
+    "id": "albqijhkmtthw39",
+    "name": "participant_roles",
+    "type": "base",
+    "system": false,
+    "schema": [
+      {
+        "id": "aadwjgwa",
+        "name": "participantId",
+        "type": "relation",
+        "system": false,
+        "required": true,
+        "unique": false,
+        "options": {
+          "collectionId": "elp7806hz4lkc39",
+          "cascadeDelete": false,
+          "minSelect": null,
+          "maxSelect": 1,
+          "displayFields": [
+            "userId",
+            "sessionId"
+          ]
+        }
+      },
+      {
+        "id": "rcevzvlz",
+        "name": "roleTypeId",
+        "type": "relation",
+        "system": false,
+        "required": true,
+        "unique": false,
+        "options": {
+          "collectionId": "xo9nwozehu25039",
+          "cascadeDelete": false,
+          "minSelect": null,
+          "maxSelect": 1,
+          "displayFields": [
+            "name"
+          ]
+        }
+      }
+    ],
+    "listRule": "",
+    "viewRule": "",
+    "createRule": "",
+    "updateRule": "",
+    "deleteRule": "",
+    "options": {}
+  },
+  {
+    "id": "5dmv3a8a86bidt9",
+    "name": "session_tips",
+    "type": "base",
+    "system": false,
+    "schema": [
+      {
+        "id": "eedaru3i",
+        "name": "sessionId",
+        "type": "relation",
+        "system": false,
+        "required": true,
+        "unique": false,
+        "options": {
+          "collectionId": "1ng90v086748pwm",
+          "cascadeDelete": false,
+          "minSelect": null,
+          "maxSelect": 1,
+          "displayFields": [
+            "code"
+          ]
+        }
+      },
+      {
+        "id": "reqbpu86",
+        "name": "text",
+        "type": "text",
+        "system": false,
+        "required": true,
+        "unique": false,
+        "options": {
+          "min": null,
+          "max": null,
+          "pattern": ""
+        }
+      }
+    ],
+    "listRule": "",
+    "viewRule": "",
+    "createRule": "",
+    "updateRule": null,
+    "deleteRule": null,
+    "options": {}
+  }
+]
